@@ -55,8 +55,8 @@ function toggleLine(e){
 function deleteCampo(index) {
     if(window.confirm("Tem certeza que deseja excluir? ")){
         Listatarefas.splice(index, 1);
-    }
-    showTarefa();
+        showTarefa();
+    } 
 }
 
 function editCampo(index){
