@@ -31,7 +31,7 @@ function showTarefa(){
         tarefasLista.innerHTML += 
         `
         <div class="tarefa">
-            <input type="checkbox" id="checkTarefa">
+            <input type="checkbox" id="checkTarefa" onchange="toggleLine(event)">
             <p>${Listatarefas[i]}</p>
             <div>
              <span class="edit" >
@@ -42,20 +42,14 @@ function showTarefa(){
              </span>
              </div>
         </div>
-        `
+        `        
     }
-    document.getElementById('checkTarefa').addEventListener('click', (e) => {
-        
-        let divPai = e.target.parentNode;
-        let tarefaChecked = divPai.querySelector('p');
-            
-        if(tarefaChecked.classList.contains('lined')){
-            tarefaChecked.classList.remove('lined') 
-        }
-        else{
-           tarefaChecked.classList.add('lined')
-        }
-    })
+}
+
+function toggleLine(e){
+    let divPai = e.target.parentNode;
+    let tarefaChecked = divPai.querySelector('p');    
+    tarefaChecked.classList.toggle('lined')
 }
 
 function deleteCampo(index) {
